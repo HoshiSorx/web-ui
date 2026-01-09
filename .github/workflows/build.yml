@@ -1,9 +1,16 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write  # This is the most important part!
+      packages: write
 
     steps:
       - name: Checkout code
